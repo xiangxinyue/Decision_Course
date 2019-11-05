@@ -1,0 +1,57 @@
+<% include partials/header %>
+
+<div style="padding-left: 20%; padding-right: 20%; padding-top: 5%">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Welcome to Decision</h1>
+          <% if (auth) {%>
+          <p class="lead"><strong><%= auth %></strong></h2>
+          <% };%>
+          <p class="lead">Decision description and instruction are here</p>
+          <hr class="my-4">
+          <a href="/add/teacher">Add Teacher</a><a href="/add/class">Add Class</a>
+          <% if (auth) {%>
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Search
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample">
+                    <form action="/" method="POST">
+                        <div class="row">
+                            <input style="margin-left: 50px; margin-right:5px" type="text" name="className" placeholder="className">
+                            <input style="margin-left: 5px; margin-right:10px" type="password" name="classNumber" placeholder="classNumber">
+                            <button class="btn btn-primary">Confirm</button>
+                        </div>
+                    </form>
+              </div>
+            <% } else { %>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Post</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sorry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You need to signin or signup to post your pistures.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="/user/signin" role="button">SignIn</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        <% }; %>
+          
+        </div>
+    </div>
+    
+    
+    </div>
+
+<% include partials/footer %>

@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+<div style="padding-left: 20%; padding-right: 20%; padding-top: 5%">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-6">There are details about <%= teacher.name %></h1>
+          <p>His/Her Score is: <strong><%= teacher.score%></strong></p>
+          <hr class="my-4">
+          <p><strong>Comments:</strong></p>
+          <% teacher.comments.forEach(function(comment){ %>
+            <p><%= comment%></p>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>

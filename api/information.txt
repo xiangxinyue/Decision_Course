@@ -1,0 +1,12 @@
+MongoDB:
+user: xxiang2@ualberta.ca
+pass: xiangxinyue219
+API : "mongodb+srv://xiangxinyue:xiangxinyue@decision-ha1xk.mongodb.net/test?retryWrites=true&w=majority"
+
+Heroku:
+xxiang2@ualberta.ca
+xiangxinyue219=
+
+Github:
+xiangxinyue
+shandmark219
